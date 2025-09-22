@@ -32,7 +32,7 @@ jobs:
           SF_ROLE_DEV: ${{ secrets.SF_ROLE_DEV }}
           SF_WAREHOUSE_DEV: ${{ secrets.SF_WAREHOUSE_DEV }}
           SF_DATABASE_DEV: ${{ secrets.SF_DATABASE_DEV }}
-          SF_PASSWORD_DEV: ${{ secrets.SF_PASSWORD_DEV }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD_DEV }}
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           python --version
