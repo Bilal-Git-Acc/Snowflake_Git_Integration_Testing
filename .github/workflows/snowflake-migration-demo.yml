@@ -27,12 +27,12 @@ jobs:
 
       - name: Run schemachange
         env:
-          SF_ACCOUNT_DEV: ${{ secrets.SF_ACCOUNT }}
-          SF_USERNAME_DEV: ${{ secrets.SF_USERNAME }}
-          SF_ROLE_DEV: ${{ secrets.SF_ROLE }}
-          SF_WAREHOUSE_DEV: ${{ secrets.SF_WAREHOUSE }}
-          SF_DATABASE_DEV: ${{ secrets.SF_DATABASE }}
-          SF_PASSWORD_DEV: ${{ secrets.SF_PASSWORD }}
+          SF_ACCOUNT_DEV: ${{ secrets.SF_ACCOUNT_DEV }}
+          SF_USERNAME_DEV: ${{ secrets.SF_USERNAME_DEV }}
+          SF_ROLE_DEV: ${{ secrets.SF_ROLE_DEV }}
+          SF_WAREHOUSE_DEV: ${{ secrets.SF_WAREHOUSE_DEV }}
+          SF_DATABASE_DEV: ${{ secrets.SF_DATABASE_DEV }}
+          SF_PASSWORD_DEV: ${{ secrets.SF_PASSWORD_DEV }}
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           python --version
@@ -40,4 +40,4 @@ jobs:
           pip install schemachange
           
           echo "Step 2: Running schemachange"
-          schemachange -f $GITHUB_WORKSPACE/deploy -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+          schemachange -f $GITHUB_WORKSPACE/deploy -a $SF_ACCOUNT_DEV -u $SF_USERNAME_DEV -r $SF_ROLE_DEV -w $SF_WAREHOUSE_DEV -d $SF_DATABASE_DEV -c $SF_DATABASE_DEV.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
