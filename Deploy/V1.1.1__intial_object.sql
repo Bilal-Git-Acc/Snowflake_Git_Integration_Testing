@@ -1,4 +1,4 @@
 
-Create Schema INFO;
+Create if not exists Schema INFO;
 
-Create table EMP.INFO.EMP_STAGE (Data variant);
+Create or replace table EMP.INFO.EMP_STAGE (Data variant);
